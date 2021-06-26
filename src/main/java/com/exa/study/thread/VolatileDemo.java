@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 class MyData {
 
-    int number = 0;
+    volatile int number = 0;
 
     public void addTo60() {
         this.number = 60;
@@ -38,6 +38,6 @@ public class VolatileDemo {
             // main thread would be wait until number is not 0
         }
 
-        System.out.println(Thread.currentThread().getName()+"\t umission is over");
+        System.out.println(Thread.currentThread().getName()+"\t mission is over, main get number vlaue:" +myData.number);
     }
 }
