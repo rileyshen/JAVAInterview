@@ -73,4 +73,6 @@ public class VolatileDemo {
 
         System.out.println(Thread.currentThread().getName()+"\t mission is over, main get number vlaue:" +myData.number);
     }
+
+
 }
