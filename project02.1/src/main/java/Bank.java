@@ -7,7 +7,7 @@ public class Bank {
     private int numberOfCustomer;
 
     public Bank() {
-        customers = new Customer[10];
+
     }
 
     public void addCustomer(String f, String l) {
@@ -28,6 +28,7 @@ public class Bank {
         }
 
         return null;
+
 
     }
 
