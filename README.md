@@ -8,6 +8,9 @@ java interview prepare
 
 ***java projects***
 + [FamilyAccount](https://github.com/rileyshen/JAVAInterview/tree/main/project01)
-    + [CustomerClass1](https://github.com/rileyshen/JAVAInterview/tree/main/project02)
-    + [CustomerClass2](https://github.com/rileyshen/JAVAInterview/tree/main/project02.1)
+    + [CustomerClass1exer](https://github.com/rileyshen/JAVAInterview/tree/main/project02)
+    + [CustomerClass2exer](https://github.com/rileyshen/JAVAInterview/tree/main/project02.1)
 + [BankCustomer](https://github.com/rileyshen/JAVAInterview/tree/main/bankaccount)
+    + [superexer](https://github.com/rileyshen/JAVAInterview/tree/main/super)
+      
++ [teamschedule](https://github.com/rileyshen/JAVAInterview/tree/main/teamschedule)
