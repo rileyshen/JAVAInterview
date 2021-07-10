@@ -20,6 +20,7 @@ public class TeamService {
      * @Description 获取开发团队中的所有成员
      * @return
      */
+
     public Programmer[] getTeam() {
         Programmer[] team = new Programmer[total];
         for (int i = 0; i < team.length; i++) {
@@ -114,6 +115,8 @@ public class TeamService {
 
         for (int j = i + 1; j < total; j++) {
             team[j -1 ] = team[j];
+
+
         }
         team[--total ] = null;
 

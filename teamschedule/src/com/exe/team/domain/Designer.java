@@ -28,4 +28,8 @@ public class Designer extends Programmer {
 //        return getDetails() + "\t架构师 \t" + getStatus() + "\t" + getBonus() + " \t" + stock + " \t" + getEquipment().getDescription();
         return getDetails() + "\t设计师 \t" + getStatus() + "\t" + bonus + " \t\t\t\t" + getEquipment().getDescription();
     }
+
+    public String getDetailsForTeam() {
+        return getMemberId() + "/" + getId() + "\t" + getName() + "\t" + getAge() + "\t" + getSalary() + "\t\t设计师" + "\t\t" + bonus;
+    }
 }

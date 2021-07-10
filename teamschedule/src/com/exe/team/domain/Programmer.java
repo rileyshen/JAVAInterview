@@ -1,10 +1,6 @@
 package com.exe.team.domain;
 
-import com.exe.team.domain.Employee;
-import com.exe.team.domain.Equipment;
 import com.exe.team.service.Status;
-
-import static com.exe.team.service.Status.FREE;
 
 public class Programmer extends Employee {
 
@@ -15,6 +11,7 @@ public class Programmer extends Employee {
     // 忘了空参
 
     public Programmer() {
+
     }
 
     public Programmer(int id, String name, int age, double salary, Equipment equipment) {
@@ -50,4 +47,10 @@ public class Programmer extends Employee {
     public String toString() {
         return getDetails() + "\t程序员 \t" + status + "\t\t\t\t\t\t" + equipment.getDescription();
     }
+
+    public String getDetailsForTeam() {
+        return memberId + "/" + getId() + "\t" + getName() + "\t" + getAge() + "\t" + getSalary() + "\t\t程序员";
+    }
+
+
 }
