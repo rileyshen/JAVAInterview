@@ -4,60 +4,68 @@ package com.exe.team.view;
  */
 
 import com.exe.team.service.NameListService;
-
-import javax.swing.text.html.parser.Parser;
+import com.exe.team.service.TeamService;
 
 public class TeamView {
-    public static void main(String[] args) {
 
-        NameListService listSvc = new NameListService;
-        TeamView teamView = new TeamView();
+    private NameListService listSvc = new NameListService();
+    private TeamService teamSvc = new TeamService();
 
-        public void enterMainMenu () {
-            boolean isFlag = true;
-            while (isFlag) {
-                System.out.println("1 list all employees");
-                System.out.println("2 get Team");
-                System.out.println("3 add Member");
-                System.out.println("4 delete Member");
+    public void enterMainMenu() {
 
-                char c = TSUtility.readMenuSelection();
-                switch (c) {
-                    case '1':
-                        teamView.listAllEmployees();
-                        break;
-                    case '2':
-                        teamView.getTeam();
-                        break;
-                    case '3':
-                        teamView.addMember();
-                        break;
-                    case '4':
-                        teamView.deleteMember();
-                }
+        boolean isFlag = true;
+
+        while (isFlag) {
+            listAllEmployees();
+
+            System.out.println("1-团队列表 2-添加团队成员 3-删除团队成员 4-退出 请选择（1-4）， ");
+
+
+            char menu = TSUtility.readMenuSelection();
+            switch (menu) {
+                case '1':
+                    getTeam();
+                    break;
+                case '2':
+                    getMember();
+                    break;
+                case '3':
+                    deleteMember();
+                    break;
+                case '4':
+                    System.out.println("退出");
+                    isFlag = false;
             }
-
         }
+
+    }
+
+
+    private void listAllEmployees() {
+
+        System.out.println("公司所有员工");
+    }
+
+    private void getTeam() {
+
+        System.out.println("1 团队列表");
+    }
+
+    private void getMember() {
+
+        System.out.println("2 添加成员");
+    }
+
+    private void deleteMember() {
+
+        System.out.println("3 删除成员");
+    }
+
+    public static void main(String[] args) {
+        TeamView view = new TeamView();
+        view.enterMainMenu();
     }
 
 }
 
 
-        public void listAllEmployees() {
-            return NameListService.getAllEmployees();
-        }
-
-    public void getTeam() {
-        return NameListService.getEmployee();
-    }
-
-    public void getMember() {
-        return NameListService.getEmployee();
-    }
-
-    public void deleteMember() {
-        return NameListService.getEmployee();
-    }
-    }
-
-}

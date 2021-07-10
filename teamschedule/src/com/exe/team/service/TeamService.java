@@ -100,6 +100,23 @@ public class TeamService {
     }
 
     public void removeMember(int memberId) throws TeamException {
-        return;
+        int i = 0;
+        for (; i < total; i++) {
+            if (team[i].getMemberId() == memberId) {
+                team[i].setStatus(Status.FREE);
+                break;
+            }
+        }
+        // 未找到
+        if (i == total) {
+            throw new TeamException("找不到指定memberID");
+        }
+
+        for (int j = i + 1; j < total; j++) {
+            team[j -1 ] = team[j];
+        }
+        team[--total ] = null;
+
+
     }
 }
