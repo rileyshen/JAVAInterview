@@ -8,19 +8,24 @@ package src.com.exe.thread;
  *         其他线程才可以开始操作ticket，这种情况即使线程a出现阻塞，也不能被改编
  *
  *4. dava中通过同步机制，来解决线程安全
- *  方式1： 同步代码块
  *
- *  synchronized(同步监视器) {
+ *  方式2： 同步方法解决Runnable线程安全问题
+
+ * 2. 同步方法仍然设计到同步监视器，只是不需要我们显式的声明
+ * 3. 非静态的同步方法，同步监视器是： this
+ *      静态同步方法，同步监视器是： 当前类本身
  *
- *  }
  *
+ *
+ * 解决了线程安全问题，
+ * 只有一个线程参与，其他等待，效率低
  *
  *
  *
  * @Author RileyShen
  * @Create 2021-07-12
  */
-class Window1 implements Runnable {
+class Window3 implements Runnable {
 
     // 这里不需要用static，因为只造了一个对象，放进了3个构造器中
     private int ticket = 100;
@@ -30,28 +35,31 @@ class Window1 implements Runnable {
         while (true) {
 
 
-            if (ticket > 0) {
-
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-
-                System.out.println(Thread.currentThread().getName() + ": 卖票， 票号为： " + ticket);
-                ticket--;
-            } else {
-                break;
-            }
+            show();
 
 
         }
     }
+
+    private synchronized void show() {
+        if (ticket > 0) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
+            System.out.println(Thread.currentThread().getName() + ": 卖票， 票号为： " + ticket);
+
+            ticket--;
+        }
+    }
 }
-public class Window1Test {
+
+public  class Window3Test {
     public static void main(String[] args) {
-        Window1 w = new Window1();
+        Window3 w = new Window3();
 
         Thread t1 = new Thread(w);
         Thread t2 = new Thread(w);
@@ -68,3 +76,4 @@ public class Window1Test {
 
     }
 }
+
