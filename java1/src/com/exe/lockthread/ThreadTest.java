@@ -1,4 +1,4 @@
-package src.com.exe.bank1;
+package src.com.exe.lockthread;
 
 /**
  * @Description:线程死锁问题

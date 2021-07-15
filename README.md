@@ -18,9 +18,15 @@ java interview prepare
 ***java Thread***
 + [Thread](https://github.com/rileyshen/JAVAInterview/tree/main/thread)
 + [同步改写饿汉式](https://github.com/rileyshen/JAVAInterview/tree/main/bank1)
++ [Lock方式解决线程安全]
++ [账户存钱项目]
++ [ThreadCommunication wait（），notify（）]
++ [Producer project]
+
 
 
 ***数据结构与算法***
 + [DataStructures](https://github.com/rileyshen/JAVAInterview/tree/main/DataStructures)
     + [ArrayQueue 列表模拟银行排队系统，无法复用]()
     + [ArrayQueue 环形队列，复用]()
+    + [linked list CRUD/leetcode 22]

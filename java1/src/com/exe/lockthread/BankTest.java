@@ -1,4 +1,4 @@
-package src.com.exe.bank1;
+package src.com.exe.lockthread;
 
 /**
  * @Description:使用同步机制将单例模式的懒汉式改写为线程安全
