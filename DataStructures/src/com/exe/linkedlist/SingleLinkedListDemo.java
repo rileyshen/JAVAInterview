@@ -50,6 +50,9 @@ class SingleLinkedList {
     // init a head, dont't store a real card info
     private HeroCard head = new HeroCard(0, "", "");
 
+    public HeroCard getHead() {
+        return head;
+    }
     // add card to the list
     // case 1: dont't have to think about the order
     // find the last node
@@ -151,6 +154,9 @@ class SingleLinkedList {
         System.out.printf("there is no such %d in the list", no);
 
     }
+
+    // leetcode 22
+    // reverse, find k 个
 
     public void list() {
         // whether the list is empty
